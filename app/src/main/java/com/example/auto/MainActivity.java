@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!listaAuto.isEmpty()) {
-                    // Si llegamos al inicio, ir al final; de lo contrario, retroceder una posición
                     posicionActual = (posicionActual - 1 + listaAuto.size()) % listaAuto.size();
                     mostrarDatosEnEditText();
                 } else {
@@ -116,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // Eliminar el objeto en la posición seleccionada
                 listaAuto.remove(posicionActual);
                 limpiarEditText();
             }
@@ -124,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // No hacer nada si se selecciona "No"
             }
         });
 
@@ -132,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void actualizarEstadoBotonGuardar() {
-        // Deshabilitar el botón "Guardar" cuando la lista tiene 4 elementos
         btnGuardar.setEnabled(listaAuto.size() < 4);
     }
 
